@@ -5,6 +5,8 @@ import useFetch from "../../Hooks/useFetch";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import styles from "./UserPhotoPost.module.css";
+import Error from "../Helper/Error";
+import { useNavigate } from "react-router-dom";
 
 function UserPhotoPost() {
   const nome = useForm();
@@ -12,6 +14,12 @@ function UserPhotoPost() {
   const idade = useForm("number");
   const [img, setImg] = React.useState({});
   const { data, error, loading, request } = useFetch();
+
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (data) navigate("/conta");
+  }, [data, navigate]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -39,13 +47,18 @@ function UserPhotoPost() {
         <Input label="Peso" type="number" name="peso" {...peso} />
         <Input label="Idade" type="number" name="idade" {...idade} />
         <input
-        className={styles.file}
+          className={styles.file}
           type="file"
           name="img"
           id="img"
           onChange={handleImgChange}
         ></input>
-        <Button>Enviar</Button>
+        {loading ? (
+          <Button disabled>Enviando...</Button>
+        ) : (
+          <Button>Enviar</Button>
+        )}
+        <Error error={error}></Error>
       </form>
       <div>
         {img.previewUrl && (

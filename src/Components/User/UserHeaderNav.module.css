@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+ 
 }
 
 .nav a,
@@ -91,6 +92,7 @@
   transform: translateX(-10px);
   opacity: 0;
   pointer-events: none;
+  z-index: 1000;
 
 }
 
@@ -122,6 +124,7 @@
     transform: initial;
     opacity: 1;
     display: flex;
-    z-index: 100;
     pointer-events: initial;
+    z-index: 1000;
+    background: #fff;
 }
