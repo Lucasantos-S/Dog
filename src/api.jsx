@@ -18,7 +18,7 @@ export function TOKEN_VALIDADE_POST(token) {
     options: {
       method: "POST",
       headers: {
-        authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     },
   };
@@ -30,7 +30,7 @@ export function USER_GET(token) {
     options: {
       method: "GET",
       headers: {
-        authorization: "Bearer " + token,
+        Authorization: "Bearer " + token,
       },
     },
   };
@@ -44,6 +44,19 @@ export function USER_POST(body) {
         "Content-type": "application/json",
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function PHOTO_POST(formData, token) {
+  return {
+    url: API_URL + "/api/photo",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      body:formData
     },
   };
 }
