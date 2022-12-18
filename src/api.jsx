@@ -56,16 +56,24 @@ export function PHOTO_POST(formData, token) {
       headers: {
         Authorization: "Bearer " + token,
       },
-      body:formData
+      body: formData,
     },
   };
 }
-export function PHOTOS({page, total, user}) {
+export function PHOTOS({ page, total, user }) {
   return {
-    url:`${ API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
       method: "GET",
-      cache:'no-store'
-  }
+      cache: "no-store",
+    },
+  };
 }
+export function PHOTO_GET(id) {
+  return {
+    url:`${API_URL}/api/photo/${id}`,
+    options: {
+      method: "GET",
+    },
+  };
 }
