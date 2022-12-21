@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./FeedPhotosItem.module.css"
 function FeedPhotoItem({ photo, setModalPhoto}) {
-  
+
     function handleClick(){
         setModalPhoto(photo)
+  
     }
 
   return (

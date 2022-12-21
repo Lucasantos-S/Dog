@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import PhotoComments from "./PhotoComments";
 import styles from "./PhotoContent.module.css";
 
-function PhotoContent({ data }) {
+function PhotoContent({data}) {
   console.log(data);
-  const { photo, comment } = data;
+  const { photo, comments } = data;
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
@@ -16,7 +16,7 @@ function PhotoContent({ data }) {
           <p className={styles.author}>
             <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             <span className={styles.visualizacoes}>{photo.acessos}</span>
-          </p >
+          </p>
           <h1 className="title">
             <Link to={`/foto/${photo.id}`}> {photo.title} </Link>
           </h1>
@@ -28,7 +28,7 @@ function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comment={comment}/>
+      <PhotoComments id={photo.id} comments={comments} />
     </div>
   );
 }

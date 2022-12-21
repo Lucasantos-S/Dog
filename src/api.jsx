@@ -6,7 +6,7 @@ export function TOKEN_POST(body) {
     options: {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     },
@@ -41,7 +41,7 @@ export function USER_POST(body) {
     options: {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     },
@@ -70,10 +70,26 @@ export function PHOTOS({ page, total, user }) {
   };
 }
 export function PHOTO_GET(id) {
+  console.log(id);
   return {
-    url:`${API_URL}/api/photo/${id}`,
+    url: `${API_URL}/api/photo/${id}`,
     options: {
       method: "GET",
+      cache: "no-store",
+    },
+  };
+}
+export function COMENT_POST(id, body) {
+  console.log(body);
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+      body: JSON.stringify(body),
     },
   };
 }

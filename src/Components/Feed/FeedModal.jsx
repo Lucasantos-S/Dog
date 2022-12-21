@@ -8,9 +8,12 @@ import styles from "./FeedModal.module.css";
 
 function FeedModal({ photo, setModalPhoto }) {
   const { data, error, loading, request } = useFetch();
+
+
   React.useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id);
     request(url, options);
+    
   }, [photo]);
 
   function handleOutsideClick(event) {
