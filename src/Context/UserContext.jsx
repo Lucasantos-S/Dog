@@ -57,6 +57,7 @@ export const UserStorage = ({ children }) => {
 
   React.useEffect(() => {
     async function autoLogin() {
+      navigate("/");
       const token = window.localStorage.getItem("token");
       if (token) {
         try {

@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
+  gap: 1px;
+}
+.textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  resize: none;
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.textarea:focus,
+.textarea:hover {
+  outline: none;
+  border-color: #fb1;
+  background: white;
+}
+
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button:focus svg path,
+.button:hover svg path {
+  fill: #fea;
+  stroke: #fb1;
+}
+
+.button:focus svg g,
+.button:hover svg g {
+  animation: latir 0.3s infinite ease-in;
+}
+
+@keyframes latir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: initial;
+  }
+}

@@ -1,20 +1,25 @@
-.comments{
-    overflow-y: auto;
+.comments {
+  overflow-y: auto;
+  word-break: break-word;
+  scrollbar-color: yellow;
+  scrollbar-width: thin;
 }
+
+
 
 .comments li {
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    display:flex;
-    flex-direction: column;
-    background-color: #eee;
-    margin-bottom:1rem;
-    width: 80%;
-    border-radius: 5px;
-    gap: 4px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  margin-bottom: 1rem;
+  width: 80%;
+  border-radius: 5px;
+  gap: 4px;
 }
 
-.comments li b:hover{
-    text-decoration:underline;
-    cursor: pointer;
+.comments li b:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
