@@ -30,16 +30,22 @@
   cursor: pointer;
   overflow: hidden;
 }
+.button:focus, 
+.button:hover {
+   box-shadow: none;
+}
 
 .button:focus svg path,
 .button:hover svg path {
   fill: #fea;
   stroke: #fb1;
+  border: none;
 }
 
 .button:focus svg g,
 .button:hover svg g {
-  animation: latir 0.3s infinite ease-in;
+  animation: latir 0.3s  infinite ease-in;
+  border: none;
 }
 
 @keyframes latir {

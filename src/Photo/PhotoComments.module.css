@@ -5,8 +5,11 @@
   scrollbar-width: thin;
 }
 
+.single.comments  {
+  padding: 0px;
+  height: 175px;
 
-
+}
 .comments li {
   margin: 0 auto;
   padding: 0.5rem 1rem;
