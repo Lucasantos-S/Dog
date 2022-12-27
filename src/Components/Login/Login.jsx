@@ -7,6 +7,7 @@ import LoginPasswordLost from "./LoginForm";
 import LoginPasswordReset from "./LoginForm";
 
 import style from "./Login.module.css";
+import NotFound from "../Helper/NotFound";
 
 
 function Login() {
@@ -21,6 +22,7 @@ function Login() {
           <Route path="criar" element={<LoginCreate />} />
           <Route path="perdeu" element={<LoginPasswordLost />} />
           <Route path="resetar" element={<LoginPasswordReset />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </div>
     </section>
