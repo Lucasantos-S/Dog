@@ -13,7 +13,7 @@ function User() {
     <section className="container">
       <UserHeader />
       <Routes>
-        <Route path="/" element={<Feed />} />
+        <Route path="/" element={<Feed/>} />
         <Route path="/postar" element={<UserPhotoPost />} />
         <Route path="/estatisticas" element={<UserStats />} />
         <Route path="*" element={<NotFound/>} />

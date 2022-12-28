@@ -19,10 +19,12 @@ function PhotoContent({ data, single }) {
       <div className={styles.details}>
         <div>
           <div className={styles.author}>
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             {user && user.nome == photo.author ? (
               <PhotoDelete id={photo.id} />
-            ) : null}
+            ) : (
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+            )}
+
             <span className={styles.visualizacoes}>{photo.acessos}</span>
           </div>
           <h1 className="title">
