@@ -36,7 +36,7 @@ function LoginPasswordReset() {
     }
   }
   return (
-    <section>
+    <section className="animeLeft">
       <h1 className="title">Digite a nova senha</h1>
       <form onSubmit={handleSubmit}>
         <Input name="password" type="password" {...password}></Input>
